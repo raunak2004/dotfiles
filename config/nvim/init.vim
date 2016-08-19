@@ -57,11 +57,11 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 set backspace=indent,eol,start
 
 " Tab control
-set noexpandtab             " insert tabs rather than spaces for <Tab>
+set expandtab               " insert spaces for <Tab>
 set smarttab                " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
-set tabstop=4               " the visible width of tabs
-set softtabstop=4           " edit as if the tabs are 4 characters wide
-set shiftwidth=4            " number of spaces to use for indent and unindent
+set tabstop=2               " the visible width of tabs
+set softtabstop=2           " edit as if the tabs are 4 characters wide
+set shiftwidth=2            " number of spaces to use for indent and unindent
 set shiftround              " round indent to a multiple of 'shiftwidth'
 set completeopt+=longest
 
@@ -194,8 +194,8 @@ map <leader>r :call RunCustomCommand()<cr>
 let g:silent_custom_command = 0
 
 " helpers for dealing with other people's code
-nmap \t :set ts=4 sts=4 sw=4 noet<cr>
-nmap \s :set ts=4 sts=4 sw=4 et<cr>
+nmap \t :set ts=2 sts=2 sw=2 noet<cr>
+nmap \s :set ts=2 sts=2 sw=2 et<cr>
 
 nmap <leader>w :setf textile<cr> :Goyo<cr>
 
