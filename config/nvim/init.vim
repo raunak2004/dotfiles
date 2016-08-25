@@ -136,6 +136,8 @@ set pastetoggle=<leader>v
 map <leader>ev :e! ~/.config/nvim/init.vim<cr>
 " edit gitconfig
 map <leader>eg :e! ~/.gitconfig<cr>
+" edit ~/.config/nvim/plugins.vim
+map <leader>evp :e! ~/.config/nvim/plugins.vim<cr>
 
 " clear highlighted search
 noremap <space> :set hlsearch! hlsearch?<cr>
@@ -157,6 +159,15 @@ vmap <leader>[ <gv
 vmap <leader>] >gv
 nmap <leader>[ <<
 nmap <leader>] >>
+
+" Add ;, to EOL (for coding)
+function! ToggleEndChar(charToMatch)
+    s/\v(.)$/\=submatch(1)==a:charToMatch ? '' : submatch(1).a:charToMatch
+endfunction
+" Add semicolor to EOL
+nnoremap <silent> ;; :call ToggleEndChar(';')<CR>
+" Add comma to EOL
+nnoremap <silent> ;, :call ToggleEndChar(',')<CR>
 
 " switch between current and last buffer
 nmap <leader>. <c-^>
@@ -200,6 +211,12 @@ nmap \s :set ts=2 sts=2 sw=2 et<cr>
 nmap <leader>w :setf textile<cr> :Goyo<cr>
 
 nnoremap <silent> <leader>u :call functions#HtmlUnEscape()<cr>
+
+" Tabular
+nmap <leader>a= :Tabularize /=<CR>
+vmap <leader>a= :Tabularize /=<CR>
+nmap <leader>a: :Tabularize /:\zs<CR>
+vmap <leader>a: :Tabularize /:\zs<CR>
 
 " }}}
 
