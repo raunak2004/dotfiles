@@ -21,7 +21,10 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " Section User Interface {{{
 
-syntax on                   " switch syntax highlighting on
+" enable 24 bit color support if supported
+if (has("termguicolors"))
+    set termguicolors
+endif
 
 set t_Co=256                " Explicitly tell vim that the terminal supports 256 colors"
 colorscheme dracula         " Set the colorscheme
@@ -253,6 +256,13 @@ augroup END
 " FZF
 """""""""""""""""""""""""""""""""""""
 
+" Toggle NERDTree
+nmap <silent> <leader>k :NERDTreeToggle<cr>
+" expand to the path of the file in the current buffer
+nmap <silent> <leader>y :NERDTreeFind<cr>
+
+let NERDTreeShowHidden=1
+
 let g:fzf_layout = { 'down': '~25%' }
 
 if isdirectory(".git")
@@ -264,7 +274,7 @@ else
 endif
 
 nmap <silent> <leader>r :Buffers<cr>
-nmap <silent> <leader>e :GFiles?<cr>
+nmap <silent> <leader>e :FZF<cr>
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
