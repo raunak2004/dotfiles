@@ -56,8 +56,8 @@ Plug 'maksimr/vim-jsbeautify', { 'for': ['javascript', 'jsx', 'html', 'css', 'js
 Plug 'mxw/vim-jsx', { 'for': ['jsx', 'javascript'] } " JSX support
 
 " TypeScript
-" Plug 'Quramy/tsuquyomi', { 'for': 'typescript', 'do': 'npm install' } " extended typescript support - works as a client for TSServer
-" Plug 'clausreinke/typescript-tools.vim', { 'for': 'typescript' } " typescript tools
+Plug 'Quramy/tsuquyomi', { 'for': 'typescript', 'do': 'npm install' } " extended typescript support - works as a client for TSServer
+Plug 'clausreinke/typescript-tools.vim', { 'for': 'typescript' } " typescript tools
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' } " typescript support
 
 " styles
