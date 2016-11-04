@@ -36,8 +36,9 @@ Plug 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
 Plug 'sickill/vim-pasta' " context-aware pasting
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " distraction-free writing
 Plug 'junegunn/limelight.vim', { 'on': 'Limelight' } " focus tool. Good for presentating with vim
-Plug 'godlygeek/tabular' " Vim script for text filtering and alignment
+"Plug 'godlygeek/tabular' " Vim script for text filtering and alignment
 Plug 'webdevel/tabulous' " better tabline, and tab labels
+Plug 'junegunn/vim-easy-align' " Better alignment
 
 " html / templates
 Plug 'mattn/emmet-vim', { 'for': 'html' } " emmet support for vim - easily create markdup wth CSS-like syntax

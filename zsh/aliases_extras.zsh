@@ -1,3 +1,3 @@
 # Misc
 # Allow sudo with aliases
-alias sudo='sudo '
+alias sudo="sudo "

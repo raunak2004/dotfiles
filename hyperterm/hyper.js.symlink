@@ -64,7 +64,8 @@ module.exports = {
     'hyperterm-one-dark',
     'hyperterm-blink',
     "hyperterm-paste",
-    "hyperlinks-iterm"
+    "hyperlinks-iterm",
+    "hyperterm-cursor"
   ],
 
   // in development, you can create a directory under
