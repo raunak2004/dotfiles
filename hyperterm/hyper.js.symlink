@@ -64,7 +64,6 @@ module.exports = {
     'hyperterm-one-dark',
     'hyperterm-blink',
     "hyperterm-paste",
-    "hyperlinks-iterm",
     "hyperterm-cursor"
   ],
 
