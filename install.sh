@@ -16,6 +16,8 @@ if [ "$(uname)" == "Darwin" ]; then
 
     source install/nvm.sh
 
+    source install/zsh.sh
+
     # create a backup of the original nginx.conf
     mv /usr/local/etc/nginx/nginx.conf /usr/local/etc/nginx/nginx.original
     ln -s ~/.dotfiles/nginx/nginx.conf /usr/local/etc/nginx/nginx.conf

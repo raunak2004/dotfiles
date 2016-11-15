@@ -1,9 +1,10 @@
 # gitconfig
 [user]
-    name = Zuhaib Zakaria
+    name = Zuhaib
     email = zzakaria@vmware.com
 [github]
     user = nerdpad
+    token = 1ddfb7dd8cec6cbb161f2de3d80df984408e17bf
 [init]
     templatedir = ~/.dotfiles/git/templates
 [alias]

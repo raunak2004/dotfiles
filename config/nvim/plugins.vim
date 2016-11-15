@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " colorschemes
 " Plug 'dracula/vim'
+Plug 'NerdPad/dracula-vim'
 Plug 'joshdick/onedark.vim'
 
 " utilities
