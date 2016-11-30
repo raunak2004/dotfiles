@@ -27,6 +27,9 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 " switch cursor to line when in insert mode, and block when not
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
+" Neovim true color support
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 if &term =~ '256color'
     " disable background color erase
     set t_ut=
@@ -37,13 +40,11 @@ if (empty($TMUX) && has("termguicolors"))
     set termguicolors
 endif
 
-let g:onedark_termcolors=16
+let g:onedark_termcolors=256
 let g:onedark_terminal_italics=1
 
-let g:dracula_terminal_italics=1
-
 syntax on
-" set t_Co=256                " Explicitly tell vim that the terminal supports 256 colors
+set t_Co=256                  " Explicitly tell vim that the terminal supports 256 colors
 colorscheme onedark           " Set the colorscheme
 
 " make the highlighting of tabs and other non-text less annoying
@@ -58,7 +59,7 @@ set number                  " show line numbers
 " set relativenumber          " show relative line numbers
 
 set wrap                    " turn on line wrapping
-set wrapmargin=8            " wrap lines when coming within n characters from side
+set wrapmargin=4            " wrap lines when coming within n characters from side
 set linebreak               " set soft wrapping
 set showbreak=…             " show ellipsis at breaking
 
@@ -204,6 +205,7 @@ map <leader>wc :wincmd q<cr>
 
 " toggle cursor line
 nnoremap <leader>i :set cursorline!<cr>
+set cursorline
 
 " scroll the viewport faster
 nnoremap <C-e> 3<C-e>
@@ -233,11 +235,10 @@ nmap <leader>w :setf textile<cr> :Goyo<cr>
 nnoremap <silent> <leader>u :call functions#HtmlUnEscape()<cr>
 
 " EasyAlign
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-"xmap ga <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-"nmap ga <Plug>(EasyAlign)
-nmap <silent> <Leader>= <Plug>(EasyAlign)ip=``
+nmap ga <Plug>(EasyAlign)
+xmap ga <Plug>(EasyAlign)
+nmap <silent> <Leader>a mz<Plug>(EasyAlign)ip=`z
+" nmap <silent> <Leader>a: mz<Plug>(EasyAlign)ip:`z
 
 " }}}
 
@@ -265,6 +266,22 @@ augroup configgroup
     autocmd BufNewFile,BufRead,BufWrite *.md syntax match Comment /\%^---\_.\{-}---$/
 
     autocmd! BufWritePost * Neomake
+
+    " JsBeautify Shortcuts
+    """""""""""""""""""""""""""""""""""""
+    " autoformat code
+    " format entire file
+    autocmd FileType javascript noremap <buffer> <leader>f :call JsBeautify()<cr>
+    autocmd FileType json noremap <buffer> <leader>f :call JsonBeautify()<cr>
+    autocmd FileType jsx noremap <buffer> <leader>f :call JsxBeautify()<cr>
+    autocmd FileType html noremap <buffer> <leader>f :call HtmlBeautify()<cr>
+    autocmd FileType css noremap <buffer> <leader>f :call CSSBeautify()<cr>
+    " format selection
+    autocmd FileType javascript vnoremap <buffer> <leader>rf :call RangeJsBeautify()<cr>
+    autocmd FileType json vnoremap <buffer> <leader>rf :call RangeJsonBeautify()<cr>
+    autocmd FileType jsx vnoremap <buffer> <leader>rf :call RangeJsxBeautify()<cr>
+    autocmd FileType html vnoremap <buffer> <leader>rf :call RangeHtmlBeautify()<cr>
+    autocmd FileType css vnoremap <buffer> <leader>rf :call RangeCSSBeautify()<cr>
 augroup END
 
 " }}}
@@ -367,3 +384,8 @@ let g:SuperTabCrMapping = 0
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
+
+" delimitMate
+"""""""""""""""""""""""""""""""""""
+let delimitMate_expand_cr=1                 " enable expansion of <CR>
+let delimitMate_expand_space=1              " enable expansion of <Space>

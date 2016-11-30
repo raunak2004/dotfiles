@@ -1,4 +1,4 @@
-(* Get the current song from iTunes or Spotify *)
+(* Get the current song from iTunes or Spotify or BeardedSpice *)
 if application "iTunes" is running then
   tell application "iTunes"
     if exists current track then
@@ -6,6 +6,28 @@ if application "iTunes" is running then
       set theArtist to the artist of the current track
       try
         return "♫  " & theName & " - " & theArtist
+      on error err
+      end try
+    end if
+  end tell
+else if application "Spotify" is running then
+  tell application "Spotify"
+    set theName to name of the current track
+    set theArtist to artist of the current track
+    set theAlbum to album of the current track
+    set theUrl to spotify url of the current track
+    try
+      return "♫  " & theName & " - " & theArtist
+    on error err
+    end try
+  end tell
+else if application "BeardedSpice" is running then
+  tell application "BeardedSpice"
+    set title to full title of application "BeardedSpice"
+
+    if title is not missing value and title does not starts with "Your stream on" then
+      try
+        return "♫  " & title
       on error err
       end try
     end if

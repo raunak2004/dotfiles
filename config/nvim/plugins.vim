@@ -40,6 +40,7 @@ Plug 'junegunn/limelight.vim', { 'on': 'Limelight' } " focus tool. Good for pres
 "Plug 'godlygeek/tabular' " Vim script for text filtering and alignment
 Plug 'webdevel/tabulous' " better tabline, and tab labels
 Plug 'junegunn/vim-easy-align' " Better alignment
+Plug 'airblade/vim-gitgutter' " Show git changes in gutter
 
 " html / templates
 Plug 'mattn/emmet-vim', { 'for': 'html' } " emmet support for vim - easily create markdup wth CSS-like syntax
@@ -68,6 +69,9 @@ Plug 'groenewege/vim-less', { 'for': 'less' } " less support
 Plug 'ap/vim-css-color', { 'for': ['css','stylus','scss'] } " set the background of hex color values to the color
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' } " CSS3 syntax support
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' } " sass scss syntax support
+
+" Misc scripts
+Plug 'vim-scripts/applescript.vim', { 'for': 'applescript' } " applescript syntax support
 
 " markdown
 Plug 'itspriddle/vim-marked', { 'for': 'markdown', 'on': 'MarkedOpen' } " Open markdown files in Marked.app - mapped to <leader>m

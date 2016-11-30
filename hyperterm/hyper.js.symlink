@@ -62,9 +62,9 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     //"hyper-dracula",
-    "hyper-one-dark",
+    "hyperterm-atom-dark",
     "hyperterm-paste",
-    "hyperterm-title",
+    //"hyperterm-title",
     "hyperterm-cursor"//,
     //"hyper-blink"
   ],
