@@ -113,6 +113,9 @@ bind -t vi-copy 'y' copy-selection
 bind C-c run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
 bind C-v run "tmux set-buffer $(reattach-to-user-namespace pbpaste); tmux paste-buffer"
 
+# load tmux plugin manager
+source ~/.dotfiles/tmux/tmux.plugins.sh
+
 ##############################
 ### Color & Style Settings ###
 ##############################

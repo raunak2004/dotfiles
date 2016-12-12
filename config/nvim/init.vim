@@ -27,9 +27,6 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 " switch cursor to line when in insert mode, and block when not
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
-" Neovim true color support
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
 if &term =~ '256color'
     " disable background color erase
     set t_ut=
@@ -45,6 +42,7 @@ let g:onedark_terminal_italics=1
 
 syntax on
 set t_Co=256                  " Explicitly tell vim that the terminal supports 256 colors
+set background=dark           " Enable dark background
 colorscheme onedark           " Set the colorscheme
 
 " make the highlighting of tabs and other non-text less annoying
@@ -65,6 +63,7 @@ set showbreak=…             " show ellipsis at breaking
 
 set autoindent              " automatically set indent of new line
 set smartindent
+set breakindent
 
 " toggle invisible characters
 set list
@@ -379,6 +378,8 @@ let g:tsuquyomi_disable_default_mappings = 1
 " don't hide quotes in json files
 let g:vim_json_syntax_conceal = 0
 
+" Interactive JsDoc mode
+let g:jsdoc_allow_input_prompt = 1          " Allow prompt for interactive input of JsDoc
 let g:SuperTabCrMapping = 0
 
 " }}}
