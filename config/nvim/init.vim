@@ -185,9 +185,9 @@ function! ToggleEndChar(charToMatch)
     s/\v(.)$/\=submatch(1)==a:charToMatch ? '' : submatch(1).a:charToMatch
 endfunction
 " Add semicolor to EOL
-nnoremap <silent> ;; :call ToggleEndChar(';')<CR>
+nnoremap <silent> ;; mz:call ToggleEndChar(';')<CR>`z
 " Add comma to EOL
-nnoremap <silent> ;, :call ToggleEndChar(',')<CR>
+nnoremap <silent> ;, mz:call ToggleEndChar(',')<CR>`z
 
 " switch between current and last buffer
 nmap <leader>. <c-^>
@@ -291,9 +291,9 @@ augroup END
 """""""""""""""""""""""""""""""""""""
 
 " Toggle NERDTree
-nmap <silent> <leader>k :NERDTreeToggle<cr>
+nmap <silent> <leader>k :NERDTreeTabsToggle<cr>
 " expand to the path of the file in the current buffer
-nmap <silent> <leader>y :NERDTreeFind<cr>
+nmap <silent> <leader>y :NERDTreeTabsFind<cr>
 
 let NERDTreeShowHidden=1
 let NERDTreeDirArrowExpandable = '▷'
@@ -348,10 +348,7 @@ nmap <leader>m :MarkedOpen!<cr>
 nmap <leader>mq :MarkedQuit<cr>
 nmap <leader>* *<c-o>:%s///gn<cr>
 
-let g:neomake_javascript_jshint_maker = {
-    \ 'args': ['--verbose'],
-    \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
-\ }
+let g:neomake_javascript_enabled_makers = ['eslint', 'jshint']
 
 let g:neomake_typescript_tsc_maker = {
     \ 'args': ['-m', 'commonjs', '--noEmit' ],

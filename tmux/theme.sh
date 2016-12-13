@@ -56,7 +56,7 @@ tm_date="#[fg=$tm_color_inactive] %R %d %b"
 tm_host="#[fg=$tm_color_feature,bold]#h"
 tm_session_name="#[fg=$tm_color_feature,bold]$tm_icon #S"
 
-tm_battery="$battery_icon $battery_percentage $battery_remain"
+tm_battery="#{battery_icon} #{battery_percentage} #{battery_remain}"
 
 set -g status-left $tm_session_name' '
-set -g status-right $tm_tunes' '$tm_battery' '$tm_date' '$tm_host
+set -g status-right $tm_tunes' '$battery_icon' '$tm_date' '$tm_host
