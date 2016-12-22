@@ -12,7 +12,7 @@ set nocompatible            " not compatible with vi
 set autoread                " detect when a file is changed
 
 set history=1000            " change history to 1000
-set textwidth=120
+set textwidth=180
 
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -26,6 +26,7 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 
 " switch cursor to line when in insert mode, and block when not
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 if &term =~ '256color'
     " disable background color erase
@@ -33,7 +34,7 @@ if &term =~ '256color'
 endif
 
 " enable 24 bit color support if supported
-if (empty($TMUX) && has("termguicolors"))
+if (has("termguicolors"))
     set termguicolors
 endif
 
@@ -379,11 +380,15 @@ let g:vim_json_syntax_conceal = 0
 let g:jsdoc_allow_input_prompt = 1          " Allow prompt for interactive input of JsDoc
 let g:SuperTabCrMapping = 0
 
-" }}}
-
-" vim:foldmethod=marker:foldlevel=0
+" git gutter
+let g:gitgutter_realtime = 1
 
 " delimitMate
 """""""""""""""""""""""""""""""""""
 let delimitMate_expand_cr=1                 " enable expansion of <CR>
 let delimitMate_expand_space=1              " enable expansion of <Space>
+
+" }}}
+
+" vim:foldmethod=marker:foldlevel=0
+

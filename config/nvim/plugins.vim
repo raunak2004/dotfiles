@@ -2,7 +2,8 @@ call plug#begin('~/.config/nvim/plugged')
 
 " colorschemes
 " Plug 'dracula/vim'
-Plug 'NerdPad/dracula-vim'
+Plug 'morhetz/gruvbox'
+Plug 'nerdpad/dracula-vim'
 Plug 'joshdick/onedark.vim'
 
 " utilities
@@ -42,6 +43,7 @@ Plug 'junegunn/limelight.vim', { 'on': 'Limelight' } " focus tool. Good for pres
 Plug 'webdevel/tabulous' " better tabline, and tab labels
 Plug 'junegunn/vim-easy-align' " Better alignment
 Plug 'airblade/vim-gitgutter' " Show git changes in gutter
+Plug 'sheerun/vim-polyglot' " vim syntax pack
 
 " html / templates
 Plug 'mattn/emmet-vim', { 'for': 'html' } " emmet support for vim - easily create markdup wth CSS-like syntax
@@ -54,10 +56,10 @@ Plug 'digitaltoad/vim-jade', { 'for': ['jade', 'pug'] } " jade support
 " JavaScript
 Plug 'gavocanov/vim-js-indent', { 'for': 'javascript' } " JavaScript indent support
 Plug 'moll/vim-node', { 'for': 'javascript' } " node support
-Plug 'othree/yajs.vim', { 'for': 'javascript' } " JavaScript syntax plugin
-Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' } " ES6 and beyond syntax
+" Plug 'othree/yajs.vim', { 'for': 'javascript' } " JavaScript syntax plugin
+" Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' } " ES6 and beyond syntax
 Plug 'maksimr/vim-jsbeautify', { 'for': ['javascript', 'jsx', 'html', 'css', 'json'], 'do': 'git submodule update --init --recursive' } " Code formatting
-Plug 'mxw/vim-jsx', { 'for': ['jsx', 'javascript'] } " JSX support
+" Plug 'mxw/vim-jsx', { 'for': ['jsx', 'javascript'] } " JSX support
 Plug 'heavenshell/vim-jsdoc', { 'for': 'javascript' } " JsDoc
 
 " TypeScript
