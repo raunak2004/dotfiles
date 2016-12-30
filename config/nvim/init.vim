@@ -240,6 +240,11 @@ xmap ga <Plug>(EasyAlign)
 nmap <silent> <Leader>a mz<Plug>(EasyAlign)ip=`z
 " nmap <silent> <Leader>a: mz<Plug>(EasyAlign)ip:`z
 
+" Surround
+" 
+nmap <leader>s csw
+nmap <leader>ds ds
+
 " }}}
 
 " Section AutoGroups {{{
