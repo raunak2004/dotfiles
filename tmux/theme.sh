@@ -1,22 +1,28 @@
 #### COLOUR
 
-tm_icon="🙊"
-tm_color_active=colour51
+tm_icon="🙊 "
+# previous 51
+tm_color_active=colour214
 tm_color_inactive=colour241
 tm_color_feature=colour198
 tm_color_music=colour41
-tm_active_border_color=colour51
+# previous 51
+tm_active_border_color=colour198
 
 # separators
 tm_separator_left_bold="◀"
 tm_separator_left_thin="❮"
+tm_separator_dim_left_thin="#[fg=$tm_color_inactive]$tm_separator_left_thin"
 tm_separator_right_bold="▶"
 tm_separator_right_thin="❯"
+tm_separator_dim_right_thin="#[fg=$tm_color_inactive]$tm_separator_right_thin"
 
 set -g status-left-length 32
 set -g status-right-length 150
 set -g status-interval 5
 
+# statusbar position
+# set-option -g status-position top
 
 # default statusbar colors
 # set-option -g status-bg colour0
@@ -27,12 +33,12 @@ set-option -g status-attr default
 # default window title colors
 set-window-option -g window-status-fg $tm_color_inactive
 set-window-option -g window-status-bg default
-set -g window-status-format "#I #W"
+set -g window-status-format "#I. #W"
 
 # active window title colors
 set-window-option -g window-status-current-fg $tm_color_active
 set-window-option -g window-status-current-bg default
-set-window-option -g  window-status-current-format "#[bold]#I #W"
+set-window-option -g  window-status-current-format "#[bold]#I. #W"
 
 # pane border
 set-option -g pane-border-fg $tm_color_inactive
@@ -52,9 +58,9 @@ set-window-option -g clock-mode-colour $tm_color_active
 tm_tunes="#[fg=$tm_color_music]#(osascript ~/.dotfiles/applescripts/tunes.scpt)"
 tm_battery="#(~/.dotfiles/bin/battery_indicator.sh)"
 
-tm_date="#[fg=$tm_color_inactive] %R %d %b"
+tm_date="#[fg=$tm_color_inactive] %l:%M %p | %d %b"
 tm_host="#[fg=$tm_color_feature,bold]#h"
 tm_session_name="#[fg=$tm_color_feature,bold]$tm_icon #S"
 
-set -g status-left $tm_session_name' '
-set -g status-right $tm_tunes' '$tm_date' '$tm_host
+set -g status-left $tm_session_name' '$tm_separator_dim_right_thin' '
+set -g status-right $tm_tunes' '$tm_date' '$tm_separator_dim_left_thin' '$tm_host
