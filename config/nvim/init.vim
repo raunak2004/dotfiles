@@ -240,10 +240,6 @@ xmap ga <Plug>(EasyAlign)
 nmap <silent> <Leader>a mz<Plug>(EasyAlign)ip=`z
 " nmap <silent> <Leader>a: mz<Plug>(EasyAlign)ip:`z
 
-" Surround
-nmap <leader>s csw
-nmap <leader>ds ds
-
 " }}}
 
 " Section AutoGroups {{{
@@ -393,6 +389,16 @@ let g:gitgutter_realtime = 1
 """""""""""""""""""""""""""""""""""
 let delimitMate_expand_cr=1                 " enable expansion of <CR>
 let delimitMate_expand_space=1              " enable expansion of <Space>
+
+" ack
+" use silver searcher (ag) if available
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" alias and shortcut
+cnoreabbrev Ack Ack!
+nnoremap <leader>s :Ack!<space><c-r>=expand("<cword>")<cr>
 
 " }}}
 
