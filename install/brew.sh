@@ -8,33 +8,33 @@ fi
 echo -e "\n\nInstalling homebrew packages..."
 echo "=============================="
 
-# cli tools
-brew install ack
-brew install tree
-brew install wget
+formulas=(
+    # flags should pass through the the `brew list check`
+    'macvim --with-override-system-vim'
+    ack
+    diff-so-fancy
+    dnsmasq
+    fzf
+    git
+    'grep --with-default-names'
+    highlight
+    hub
+    markdown
+    neovim/neovim/neovim
+    nginx
+    reattach-to-user-namespace
+    the_silver_searcher
+    tmux
+    tree
+    wget
+    z
+    zsh
+)
 
-# development server setup
-brew install nginx
-brew install dnsmasq
-
-# development tools
-brew install git
-brew install hub
-brew install fzf
-brew install macvim --override-system-vim
-brew install reattach-to-user-namespace
-brew install tmux
-brew install zsh
-brew install highlight
-brew install nvm
-brew install z
-brew install markdown
-brew install diff-so-fancy
-brew install zsh-syntax-highlighting
-brew install zsh-autosuggestions
-brew install the_silver_searcher
-
-# install neovim
-brew install neovim/neovim/neovim
-
-# exit 0
+for formula in "${formulas[@]}"; do
+    if brew list "$formula" > /dev/null 2>&1; then
+        echo "$formula already installed... skipping."
+    else
+        brew install $formula
+    fi
+done
