@@ -26,7 +26,6 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 
 " switch cursor to line when in insert mode, and block when not
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 if &term =~ '256color'
     " disable background color erase
@@ -34,7 +33,7 @@ if &term =~ '256color'
 endif
 
 " enable 24 bit color support if supported
-if (has("termguicolors"))
+if (has('mac') && has("termguicolors"))
     set termguicolors
 endif
 
@@ -127,8 +126,8 @@ set t_vb=
 set tm=500
 
 if has('mouse')
-    set mouse=a
-    " set ttymouse=xterm2
+  set mouse=a
+  " set ttymouse=xterm2
 endif
 
 " }}}
@@ -403,4 +402,3 @@ nnoremap <leader>s :Ack!<space><c-r>=expand("<cword>")<cr>
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
-

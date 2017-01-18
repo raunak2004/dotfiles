@@ -1,29 +1,31 @@
-source ~/.zplug/init.zsh
+#!/bin/sh
 
-# load the good parts from oh-my-zsh
-# zplug "lib/completion",      from:oh-my-zsh
-zplug "lib/git",             from:oh-my-zsh
-#zplug "lib/history",         from:oh-my-zsh
-#zplug "lib/key-bindings",    from:oh-my-zsh
-#zplug "plugins/docker",      from:oh-my-zsh
-#zplug "plugins/grunt",       from:oh-my-zsh, nice:10
-#zplug "plugins/npm",         from:oh-my-zsh, nice:10
-zplug "plugins/git",         from:oh-my-zsh
-#zplug "plugins/web-search"   from:oh-my-zsh
-# zplug "plugins/thefuck"      from:oh-my-zsh
-# zplug "plugins/ssh-agent"    from:oh-my-zsh
-
-# theme
-# zplug "robbyrussell/oh-my-zsh", use:"lib/*.zsh", nice:14
-#zplug "dracula/zsh", use:"dracula.zsh-theme", nice:15
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
+# only source zplug on initial load
+if [ -z ${DOTFILES_LOADED+x} ]; then
+    if ! [ type "zplug" > /dev/null 2>&1 ]; then
+        source ~/.zplug/init.zsh
     fi
+
+    zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+    zplug 'zsh-users/zsh-syntax-highlighting', defer:2
+    zplug 'zsh-users/zsh-autosuggestions'
+    zplug 'akoenig/npm-run.plugin.zsh'
+
+    export NVM_LAZY_LOAD=true
+    zplug "lukechilds/zsh-nvm"
+
+    # git
+    zplug "lib/git", from:oh-my-zsh
+    zplug "plugins/git", from:oh-my-zsh
+
+    # Install plugins if there are plugins that have not been installed
+    if ! zplug check; then
+        printf "Install? [y/N]: "
+        if read -q; then
+            echo; zplug install
+        fi
+    fi
+
+    zplug load
 fi
 
-# Then, source plugins and add commands to $PATH
-zplug load --verbose
