@@ -1,11 +1,8 @@
 #!/bin/sh
 
 # only source zplug on initial load
-echo 'inside zplug.zsh'
-if [ -z ${DOTFILES_LOADED+x} ]; then
-    echo 'loading zplug'
+if [ -z ${RELOAD} ]; then
     if ! [ type "zplug" > /dev/null 2>&1 ]; then
-        echo 'source zplug init'
         source ~/.zplug/init.zsh
     fi
 

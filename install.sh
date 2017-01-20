@@ -20,7 +20,10 @@ if [ "$(uname)" == "Darwin" ]; then
     source install/osx.sh
 
     # create a backup of the original nginx.conf
-    mv /usr/local/etc/nginx/nginx.conf /usr/local/etc/nginx/nginx.original
+    if [ -f /usr/local/etc/nginx/nginx.conf ]; then
+        mv /usr/local/etc/nginx/nginx.conf /usr/local/etc/nginx/nginx.conf.original
+    fi
+
     ln -s ~/.dotfiles/nginx/nginx.conf /usr/local/etc/nginx/nginx.conf
     # symlink the code.dev from dotfiles
     ln -s ~/.dotfiles/nginx/code.dev /usr/local/etc/nginx/sites-enabled/code.dev
@@ -39,8 +42,7 @@ fi
 
 if ! command_exists zplug; then
     echo "installing zplug, a plugin manager for zsh - http://zplug.sh"
-    # curl -sL zplug.sh/installer | zsh
-    git clone https://github.com/zplug/zplug.git ~/.zplug
+    git clone https://github.com/zplug/zplug ~/.zplug
 fi
 
 echo "Done. Reload your terminal."

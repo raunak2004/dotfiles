@@ -229,8 +229,6 @@ let g:silent_custom_command = 0
 nmap \t :set ts=2 sts=2 sw=2 noet<cr>
 nmap \s :set ts=2 sts=2 sw=2 et<cr>
 
-nmap <leader>w :setf textile<cr> :Goyo<cr>
-
 nnoremap <silent> <leader>u :call functions#HtmlUnEscape()<cr>
 
 " EasyAlign
