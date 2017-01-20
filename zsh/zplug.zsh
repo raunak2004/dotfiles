@@ -1,8 +1,11 @@
 #!/bin/sh
 
 # only source zplug on initial load
+echo 'inside zplug.zsh'
 if [ -z ${DOTFILES_LOADED+x} ]; then
+    echo 'loading zplug'
     if ! [ type "zplug" > /dev/null 2>&1 ]; then
+        echo 'source zplug init'
         source ~/.zplug/init.zsh
     fi
 
@@ -12,11 +15,11 @@ if [ -z ${DOTFILES_LOADED+x} ]; then
     zplug 'akoenig/npm-run.plugin.zsh'
 
     export NVM_LAZY_LOAD=true
-    zplug "lukechilds/zsh-nvm"
+    zplug 'lukechilds/zsh-nvm'
 
     # git
-    zplug "lib/git", from:oh-my-zsh
-    zplug "plugins/git", from:oh-my-zsh
+    zplug 'lib/git', from:oh-my-zsh
+    zplug 'plugins/git', from:oh-my-zsh
 
     # Install plugins if there are plugins that have not been installed
     if ! zplug check; then
