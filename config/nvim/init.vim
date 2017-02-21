@@ -164,6 +164,8 @@ noremap <space> :set hlsearch! hlsearch?<cr>
 
 " activate spell-checking alternatives
 nmap ;s :set invspell spelllang=en<cr>
+imap <F7> <Esc>1z=`]a
+nmap <F7> <Esc>[s1z=
 
 " markdown to html
 nmap <leader>md :%!markdown --html4tags <cr>
@@ -285,8 +287,8 @@ augroup END
 
 " Section Plugins {{{
 
-" FZF
-"""""""""""""""""""""""""""""""""""""
+" Beautify
+let g:editorconfig_Beautifier = '~/.editorconfig'
 
 " Toggle NERDTree
 nmap <silent> <leader>k :NERDTreeTabsToggle<cr>
@@ -297,6 +299,8 @@ let NERDTreeShowHidden=1
 let NERDTreeDirArrowExpandable = '▷'
 let NERDTreeDirArrowCollapsible = '▼'
 
+" FZF
+"""""""""""""""""""""""""""""""""""""
 let g:fzf_layout = { 'down': '~25%' }
 
 if isdirectory(".git")
