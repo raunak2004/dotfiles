@@ -11,7 +11,8 @@ if [ -z ${RELOAD} ]; then
     zplug 'zsh-users/zsh-autosuggestions'
     zplug 'akoenig/npm-run.plugin.zsh'
 
-    export NVM_LAZY_LOAD=true
+    # export NVM_LAZY_LOAD=true
+    # export NVM_AUTO_USE=true
     zplug 'lukechilds/zsh-nvm'
 
     # git
