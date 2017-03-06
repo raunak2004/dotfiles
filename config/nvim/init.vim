@@ -20,6 +20,12 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
+if (has('nvim'))
+	" show results of substition as they're happening
+	" but don't open a split
+	set inccommand=nosplit
+endif
+
 " }}}
 
 " Section User Interface {{{
@@ -172,6 +178,7 @@ nmap <leader>md :%!markdown --html4tags <cr>
 
 " remove extra whitespace
 nmap <leader><space> :%s/\s\+$<cr>
+nmap <leader><space><space> :%s/\n\{2,}/\r\r/g<cr>
 
 
 nmap <leader>l :set list!<cr>
@@ -376,10 +383,6 @@ let g:airline#extensions#tabline#enabled = 1 " enable airline tabline
 let g:airline#extensions#tabline#tab_min_count = 2 " only show tabline if tabs are being used (more than 1 tab open)
 let g:airline#extensions#tabline#show_buffers = 0 " do not show open buffers in tabline
 let g:airline#extensions#tabline#show_splits = 0
-
-let g:tsuquyomi_disable_default_mappings = 1
-let g:tsuquyomi_completion_detail = 1
-autocmd FileType typescript nmap <buffer> <leader>h : <C-u>echo tsuquyomi#hint()<cr>
 
 " don't hide quotes in json files
 let g:vim_json_syntax_conceal = 0
