@@ -1,7 +1,7 @@
 # gitconfig
 [user]
-    name = nerdpad
-    email = zuhaib@nerdpad.com
+    name = Zuhaib
+    email = zzakaria@vmware.com
 [github]
     user = nerdpad
 [init]

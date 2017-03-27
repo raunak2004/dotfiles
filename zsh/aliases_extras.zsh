@@ -11,9 +11,6 @@ fi
 # Allow sudo with aliases
 alias sudo="sudo "
 
-# mimic vim functions
-alias :q='exit'
-
 # vimrc editing
 alias ve='vim ~/.vimrc'
 
