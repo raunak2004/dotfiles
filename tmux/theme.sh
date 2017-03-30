@@ -1,8 +1,7 @@
 #### COLOUR
 
-# tm_icon="🙊 " # My
-tm_icon="🙊"
-# tm_icon="🤡"
+# tm_icon="🙊 "
+tm_icon="☠ "
 # previous 51
 tm_color_active=colour214
 tm_color_inactive=colour241

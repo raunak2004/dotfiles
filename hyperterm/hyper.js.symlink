@@ -2,7 +2,7 @@
 module.exports = {
   config: {
     // default font size in pixels for all tabs
-    fontSize: 16,
+    fontSize: 14,
 
     // font family with optional fallbacks
     fontFamily: '"Operator Mono", "Droid Sans Mono for Powerline Plus Nerd File Types", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
@@ -15,10 +15,10 @@ module.exports = {
     windowSize: [1280, 720],
 
     // color of the text
-    foregroundColor: '#fff',
+    foregroundColor: '#abb2bf',
 
     // terminal background color
-    backgroundColor: '#000',
+    backgroundColor: '#282c34',
 
     // border color (window, tabs)
     borderColor: '#333',

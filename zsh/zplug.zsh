@@ -11,6 +11,7 @@ if [ -z ${RELOAD} ]; then
     zplug 'zsh-users/zsh-autosuggestions'
     zplug 'akoenig/npm-run.plugin.zsh'
     zplug 'yonchu/grunt-zsh-completion'
+    zplug 'plugins/yarn', from:oh-my-zsh, as:plugin
 
     # export NVM_LAZY_LOAD=true
     export NVM_AUTO_USE=true
