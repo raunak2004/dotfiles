@@ -1,7 +1,8 @@
 #### COLOUR
 
 # tm_icon="🙊 "
-tm_icon="☠ "
+# tm_icon="☠ "
+tm_icon="🤡 "
 # previous 51
 tm_color_active=colour214
 tm_color_inactive=colour241
@@ -21,9 +22,6 @@ tm_separator_dim_right_thin="#[fg=$tm_color_inactive]$tm_separator_right_thin"
 set -g status-left-length 32
 set -g status-right-length 150
 set -g status-interval 5
-
-# statusbar position
-# set-option -g status-position top
 
 # default statusbar colors
 # set-option -g status-bg colour0
@@ -56,7 +54,8 @@ set-option -g display-panes-colour $tm_color_inactive
 # clock
 set-window-option -g clock-mode-colour $tm_color_active
 
-tm_tunes="#[fg=$tm_color_music]#(osascript ~/.dotfiles/applescripts/tunes.scpt | cut -c 1-50)"
+# tm_tunes="#[fg=$tm_color_music]#(osascript ~/.dotfiles/applescripts/tunes.scpt | cut -c 1-50)"
+tm_tunes="#[fg=$tm_color_music]#(osascript -l JavaScript ~/.dotfiles/applescripts/tunes.js)"
 tm_battery="#(~/.dotfiles/bin/battery_indicator.sh)"
 
 tm_date="#[fg=$tm_color_inactive] %l:%M %p | %d %b"
