@@ -17,10 +17,11 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 " colorschemes
-Plug 'joshdick/onedark.vim'
+Plug 'nerdpad/dracula-vim'
+" Plug 'joshdick/onedark.vim'
 
 " utilities
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind', 'NERDTreeTabsToggle'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons' | Plug 'jistr/vim-nerdtree-tabs' " file drawer
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind', 'NERDTreeTabsToggle', 'NERDTreeTabsFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons' | Plug 'jistr/vim-nerdtree-tabs' " file drawer
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim' " fuzzy file finder and so much more
 Plug 'mileszs/ack.vim' " search inside files using ack. Same as command line ack utility, but use :Ack
 Plug 'Raimondi/delimitMate' " automatic closing of quotes, parenthesis, brackets, etc.
@@ -70,6 +71,7 @@ Plug 'maksimr/vim-jsbeautify', { 'for': ['javascript', 'jsx', 'html', 'css', 'js
 Plug 'mxw/vim-jsx', { 'for': ['jsx', 'javascript'] } " JSX support
 
 " TypeScript
+Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
 Plug 'jason0x43/vim-tss', { 'for': 'typescript', 'do': 'npm install' }
 " Plug 'Quramy/tsuquyomi', { 'for': 'typescript', 'do': 'npm install' } " extended typescript support - works as a client for TSServer
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' } " typescript support

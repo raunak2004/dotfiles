@@ -12,6 +12,8 @@ if [ -z ${RELOAD} ]; then
     zplug 'akoenig/npm-run.plugin.zsh'
     zplug 'yonchu/grunt-zsh-completion'
     zplug 'plugins/yarn', from:oh-my-zsh, as:plugin
+    zplug 'plugins/ssh-agent', from:oh-my-zsh, ignore:oh-my-zsh.sh
+    zplug 'djui/alias-tips'
 
     # export NVM_LAZY_LOAD=true
     export NVM_AUTO_USE=true

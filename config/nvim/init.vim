@@ -45,11 +45,12 @@ endif
 
 let g:onedark_termcolors=256
 let g:onedark_terminal_italics=1
+let g:dracula_terminal_italics=1
 
 syntax on
 set t_Co=256                  " Explicitly tell vim that the terminal supports 256 colors
 set background=dark           " Enable dark background
-colorscheme onedark           " Set the colorscheme
+colorscheme dracula           " Set the colorscheme
 
 " make the highlighting of tabs and other non-text less annoying
 highlight SpecialKey ctermbg=none ctermfg=8
@@ -213,7 +214,7 @@ map <leader>wc :wincmd q<cr>
 
 " toggle cursor line
 nnoremap <leader>i :set cursorline!<cr>
-set cursorline
+" set cursorline
 
 " scroll the viewport faster
 nnoremap <C-e> 3<C-e>
@@ -382,7 +383,7 @@ let g:neomake_javascript_enabled_makers = ['jshint', 'eslint']
 let g:airline_powerline_fonts=1
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-let g:airline_theme='onedark'
+let g:airline_theme='dracula'
 let g:airline#extensions#tabline#enabled = 1 " enable airline tabline
 let g:airline#extensions#tabline#tab_min_count = 2 " only show tabline if tabs are being used (more than 1 tab open)
 let g:airline#extensions#tabline#show_buffers = 0 " do not show open buffers in tabline
