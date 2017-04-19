@@ -19,6 +19,7 @@ call plug#begin('~/.config/nvim/plugged')
 " colorschemes
 Plug 'nerdpad/dracula-vim'
 " Plug 'joshdick/onedark.vim'
+Plug 'chriskempson/base16-vim'
 
 " utilities
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind', 'NERDTreeTabsToggle', 'NERDTreeTabsFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons' | Plug 'jistr/vim-nerdtree-tabs' " file drawer
@@ -35,6 +36,7 @@ Plug 'vim-airline/vim-airline' " fancy statusline
 Plug 'vim-airline/vim-airline-themes' " themes for vim-airline
 Plug 'neomake/neomake' " neovim replacement for syntastic using neovim's job control functonality
 Plug 'tpope/vim-fugitive' " amazing git wrapper for vim
+Plug 'tpope/vim-rhubarb' " hub extension for fugitive
 Plug 'tpope/vim-repeat' " enables repeating other supported plugins with the . command
 Plug 'tomtom/tlib_vim' " utility functions for vim
 Plug 'MarcWeber/vim-addon-mw-utils' " interpret a file by function and cache file automatically
@@ -63,21 +65,24 @@ Plug 'mustache/vim-mustache-handlebars' " mustach support
 Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] } " pug / jade support
 
 " JavaScript
-Plug 'gavocanov/vim-js-indent', { 'for': 'javascript' } " JavaScript indent support
-Plug 'moll/vim-node', { 'for': 'javascript' } " node support
-Plug 'othree/yajs.vim', { 'for': 'javascript' } " JavaScript syntax plugin
-Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' } " ES6 and beyond syntax
-Plug 'maksimr/vim-jsbeautify', { 'for': ['javascript', 'jsx', 'html', 'css', 'json'], 'do': 'git submodule update --init --recursive' } " Code formatting
-Plug 'mxw/vim-jsx', { 'for': ['jsx', 'javascript'] } " JSX support
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html'] }
+Plug 'moll/vim-node', { 'for': ['javascript', 'javascript.jsx']  } " node support
+Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] } " JSX support
+Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
+" Plug 'othree/yajs.vim', { 'for': 'javascript' } " JavaScript syntax plugin
+" Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' } " ES6 and beyond syntax
+Plug 'maksimr/vim-jsbeautify', { 'for': ['javascript', 'javascript.jsx', 'jsx', 'html', 'css', 'json'], 'do': 'git submodule update --init --recursive' } " Code formatting
 
 " TypeScript
-Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
 Plug 'jason0x43/vim-tss', { 'for': 'typescript', 'do': 'npm install' }
 " Plug 'Quramy/tsuquyomi', { 'for': 'typescript', 'do': 'npm install' } " extended typescript support - works as a client for TSServer
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' } " typescript support
 
 " Elm
 Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
+
+" CoffeeScript
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
 " styles
 Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] } " markdown support
@@ -90,9 +95,7 @@ Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' } " sass scss syntax support
 Plug 'vim-scripts/applescript.vim', { 'for': 'applescript' } " applescript syntax support
 
 " markdown
-if (has('osx'))
-    Plug 'itspriddle/vim-marked', { 'for': 'markdown', 'on': 'MarkedOpen' } " Open markdown files in Marked.app - mapped to <leader>m
-endif
+Plug 'itspriddle/vim-marked', { 'for': 'markdown', 'on': 'MarkedOpen' } " Open markdown files in Marked.app - mapped to <leader>m
 Plug 'tpope/vim-markdown', { 'for': 'markdown' } " markdown support
 
 " language-specific plugins
