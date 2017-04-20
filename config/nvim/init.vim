@@ -392,9 +392,26 @@ let g:airline#extensions#tabline#show_splits = 0
 " don't hide quotes in json files
 let g:vim_json_syntax_conceal = 0
 
-" Interactive JsDoc mode
-let g:jsdoc_allow_input_prompt = 1          " Allow prompt for interactive input of JsDoc
+" completion
+" https://tinyurl.com/zkurrdk
+let g:deoplete#enable_at_startup = 1 " enable Deoplete
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = [
+  \ 'tern#Complete',
+  \ 'jspc#omni'
+\]
+set completeopt=longest,menuone ",preview
+let g:deoplete#sources = {}
+let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
+
+" supertab
+autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+let g:UltiSnipsExpandTrigger="<C-j>"
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 let g:SuperTabCrMapping = 0
+"set completeopt-=preview
 
 " git gutter
 let g:gitgutter_realtime = 1
