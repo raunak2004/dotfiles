@@ -407,11 +407,10 @@ let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 
 " supertab
+let g:SuperTabCrMapping = 0
 autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:UltiSnipsExpandTrigger="<C-j>"
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-let g:SuperTabCrMapping = 0
-"set completeopt-=preview
 
 " git gutter
 let g:gitgutter_realtime = 1
