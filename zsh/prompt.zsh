@@ -49,12 +49,11 @@ git_arrows() {
     arrow_status=(${(ps:\t:)arrow_status})
     local left=${arrow_status[1]} right=${arrow_status[2]}
 
-    (( ${right:-0} > 0 )) && arrows+="%F{011}⇣%f"
-    (( ${left:-0} > 0 )) && arrows+="%F{012}⇡%f"
+    (( ${right:-0} > 0 )) && arrows+="%F{011}⇣${right}%f"
+    (( ${left:-0} > 0 )) && arrows+="%F{012}⇡${left}%f"
 
     echo $arrows
 }
-
 
 # indicate a job (for example, vim) has been backgrounded
 # If there is a job in the background, display a ✱
@@ -71,7 +70,6 @@ suspended_jobs() {
 precmd() {
     vcs_info
     # old color 51
-    # print -P '\n%F{214}%~'
     print -P '\n%F{214}%~'
 }
 
