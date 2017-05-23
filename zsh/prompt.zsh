@@ -73,8 +73,7 @@ precmd() {
     print -P '\n%F{214}%~'
 }
 
-#export PROMPT='%(?.%F{205}.%F{red})⇨%f '
-#export RPROMPT='`git_dirty`%F{241}$vcs_info_msg_0_%f `git_arrows``suspended_jobs`'
+#export RPROMPT='`git_dirty`%F{241}$vcs_info_msg_0_%f `upstream_branch``git_arrows``suspended_jobs`'
 
 export PROMPT='%(?.%F{205}.%F{red})➜%f '
-export RPROMPT='`git_dirty`%F{241}$vcs_info_msg_0_%f `upstream_branch``git_arrows``suspended_jobs`'
+export RPROMPT='`git_dirty`%F{241}$vcs_info_msg_0_%f `git_arrows``suspended_jobs`'
