@@ -1,14 +1,9 @@
 #### COLOUR
 
-# tm_icon="🙊 "
-# tm_icon="☠ "
-tm_icon="🤡 "
-# previous 51
 tm_color_active=colour214
 tm_color_inactive=colour241
 tm_color_feature=colour198
 tm_color_music=colour41
-# previous 51
 tm_active_border_color=colour198
 
 # separators
@@ -60,7 +55,7 @@ tm_battery="#(~/.dotfiles/bin/battery_indicator.sh)"
 
 tm_date="#[fg=$tm_color_inactive] %l:%M %p | %d %b"
 tm_host="#[fg=$tm_color_feature,bold]#h"
-tm_session_name="#[fg=$tm_color_feature,bold]$tm_icon #S"
+tm_session_name="#[fg=$tm_color_feature,bold]#S"
 
 set -g status-left $tm_session_name' '$tm_separator_dim_right_thin' '
 set -g status-right $tm_tunes' '$tm_date' '$tm_separator_dim_left_thin' '$tm_host
