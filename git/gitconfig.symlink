@@ -1,9 +1,9 @@
 # gitconfig
 [user]
-	name = Zuhaib
-	email = zzakaria@vmware.com
+	name = Raunak
+	email = rkanhere@vmware.com
 [github]
-	user = nerdpad
+	user = raunak2004
 [init]
     templatedir = ~/.dotfiles/git/templates
 [alias]
